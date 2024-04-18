@@ -19,11 +19,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     // 根据作者和出版日期范围查询图书列表
     List<Book> findByAuthorAndPublicationDateBetween(String author, Date startDate, Date endDate);
-
     // 根据标题和作者查询单个图书
     Book findByTitleAndAuthor(String title, String author);
-
-
 
     // 根据标题和作者删除图书
     void deleteByTitleAndAuthor(String title, String author);

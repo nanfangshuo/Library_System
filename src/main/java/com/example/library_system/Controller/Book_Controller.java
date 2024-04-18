@@ -13,7 +13,6 @@ public class Book_Controller {
     @Autowired
     private Book_Service bookService;
 
-
     @GetMapping("/{id}")
     // getBookById方法，该方法接受一个Long类型的id参数，并返回一个Book对象。
     public Book getBookById(@PathVariable Long id) {
