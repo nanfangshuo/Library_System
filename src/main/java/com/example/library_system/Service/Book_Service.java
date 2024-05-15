@@ -4,6 +4,7 @@ import com.example.library_system.BookRepository;
 import com.example.library_system.Entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ public class Book_Service {
     @Autowired
     private BookRepository bookRepository;
 
+    @Cacheable(value = "books", key = "#id")
     public Book findById(Long id) {
         return bookRepository.findById(id).orElse(null);
     }
